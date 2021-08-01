@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import AddUser from "./Components/AddUser";
+import Users from "./Components/Users";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [],
+    };
+  }
+
+  //this adds new users to the users created already by
+  // attaching random id numbers with the math below
+  addNewUser = (user) => {
+    user.id = 100 + Math.random() * 1000;
+    this.setState({
+      users: [...this.state.users, user],
+    });
+  };
+
+  //this method removes users from the list by their ID
+  //by filtering through the list that and identifying
+  //the id that does not match the one that needs not be
+  // removed
+  deleteUser = (id) => {
+    let newUser = this.state.users.filter((user) => user.id !== id);
+    this.setState({ users: newUser });
+  };
+
+  // updateUser = (id, newInfo) => {
+  //   let newUsers = users.map((user) => {
+  //     if (user.id === id) {
+  //       return new info
+  //     }
+  //   })
+  // }
+
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-2">
+            <AddUser addUser={this.addNewUser} />
+          </div>
+          <h1> Users</h1>
+          <div className="col-md-10">
+            <Users usersdata={this.state.users} deleteuser={this.deleteUser} />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default App;
