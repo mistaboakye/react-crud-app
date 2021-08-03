@@ -29,24 +29,28 @@ export default class App extends Component {
     this.setState({ users: newUser });
   };
 
-  // updateUser = (id, newInfo) => {
-  //   let newUsers = users.map((user) => {
-  //     if (user.id === id) {
-  //       return new info
-  //     }
-  //   })
-  // }
-
+  updateUser = (id, newContactUpdate) => {
+    this.setState({
+      users: this.state.users.map((user) =>
+        user.id === id ? newContactUpdate : user
+      ),
+    });
+  };
   render() {
     return (
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">
+            <h1>Sign Up Form</h1>
             <AddUser addUser={this.addNewUser} />
           </div>
           <h1> Users</h1>
           <div className="col-md-10">
-            <Users usersdata={this.state.users} deleteuser={this.deleteUser} />
+            <Users
+              usersdata={this.state.users}
+              deleteuser={this.deleteUser}
+              updateUser={this.updateUser}
+            />
           </div>
         </div>
       </div>

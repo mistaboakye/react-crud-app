@@ -32,6 +32,7 @@ export default class Users extends Component {
                 user={user}
                 key={user.id}
                 deleteuser={this.props.deleteuser}
+                updateUser={this.props.updateUser}
               />
             );
           })}

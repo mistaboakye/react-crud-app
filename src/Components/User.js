@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import EditUser from "./EditUser";
 
 const User = (props) => {
   const [show, setShow] = useState(false);
@@ -25,19 +26,17 @@ const User = (props) => {
         <button className="btn btn-danger" onClick={handleDelete}>
           Delete
         </button>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} animation={false}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
+          <Modal.Body>
+            <EditUser
+              userinfo={props.user}
+              updateUser={props.updateUser}
+              closeModal={handleClose}
+            />
+          </Modal.Body>
         </Modal>
       </div>
     </>
