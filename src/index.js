@@ -4,9 +4,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createStore, applyMiddleware } from "redux";
-import userReducer from "./Store/usersReducer";
+import { Provider } from "react-redux";
+import usersReducer from "./Store/usersReducer";
 import thunk from "redux-thunk";
-const store = createStore(userReducer, applyMiddleware(thunk));
+const store = createStore(usersReducer, applyMiddleware(thunk));
 
 //promises in javascript
 // const promiseForChocomilo = new Promise((resolve, reject) => {
@@ -36,7 +37,11 @@ const store = createStore(userReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* with the help of the <Provider/> we've been able to 
+    connect our app to the store with the help of the react-redux*/}
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

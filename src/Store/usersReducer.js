@@ -12,7 +12,7 @@ const firstState = {
 //and an action
 
 //set up your reducer
-const userReducer = (state = firstState, action) => {
+const usersReducer = (state = firstState, action) => {
   switch (action.type) {
     case "ADD_USER":
       const newUser = {
@@ -27,3 +27,5 @@ const userReducer = (state = firstState, action) => {
       return state;
   }
 };
+
+export default usersReducer;
