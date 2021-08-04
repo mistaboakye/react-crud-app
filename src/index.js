@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createStore, applyMiddleware } from "redux";
 import userReducer from "./Store/usersReducer";
-import { thunk } from "redux-thunk";
+import thunk from "redux-thunk";
 const store = createStore(userReducer, applyMiddleware(thunk));
 
 //promises in javascript
