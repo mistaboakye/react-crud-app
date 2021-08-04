@@ -1526,6 +1526,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.12.1":
+  version: 7.14.8
+  resolution: "@babel/runtime@npm:7.14.8"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: ebadb3e013a26e0f62abea0da6f6f5d83c9566f0d900e65069885f93088066c64586076d15dcbe6e093c536f66cffc9e2e136ad5d8b3e66235af62f0051afa42
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.8, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.6.3, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.14.6
   resolution: "@babel/runtime@npm:7.14.6"
@@ -2353,6 +2362,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hoist-non-react-statics@npm:^3.3.0":
+  version: 3.3.1
+  resolution: "@types/hoist-non-react-statics@npm:3.3.1"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: 16ab4c45d4920fa378c8be76554b10061247fc04d2c8af11bdb7d520b3967e9c06d7ad5efd9b0f1657fbc4d095f62c6e1325f03b9141eb1ef2c8095b96fd42f8
+  languageName: node
+  linkType: hard
+
 "@types/html-minifier-terser@npm:^5.0.0":
   version: 5.1.1
   resolution: "@types/html-minifier-terser@npm:5.1.1"
@@ -2462,6 +2481,18 @@ __metadata:
   version: 1.5.4
   resolution: "@types/q@npm:1.5.4"
   checksum: 1a19cf2c41648b862bd25a4c26ba33dc7206f14fcf50c5b78031b59090d21176e703cd10aff8af409eafbefcebb288607d30af765ee3859637cf3fae6e875648
+  languageName: node
+  linkType: hard
+
+"@types/react-redux@npm:^7.1.16":
+  version: 7.1.18
+  resolution: "@types/react-redux@npm:7.1.18"
+  dependencies:
+    "@types/hoist-non-react-statics": ^3.3.0
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+    redux: ^4.0.0
+  checksum: b247ff7ce31cede226f4606571bf975aeec91fe911e65e72cecaaac7234d4d694a7be0791419bb4259c7012b662a96267f694daaacbc18f3157fc7f955af55c9
   languageName: node
   linkType: hard
 
@@ -7398,6 +7429,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "hoist-non-react-statics@npm:3.3.2"
+  dependencies:
+    react-is: ^16.7.0
+  checksum: d3e3791d6e3a2741ce0ba38e878081dec49247ef22982a990c80941ee1f564ef16cd5a511bcc8c5e54f1ce8205535e0414ca5feea722c0690c80040be7ebf9df
+  languageName: node
+  linkType: hard
+
 "hoopy@npm:^0.1.4":
   version: 0.1.4
   resolution: "hoopy@npm:0.1.4"
@@ -12110,9 +12150,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-bootstrap@npm:next":
-  version: 2.0.0-beta.4
-  resolution: "react-bootstrap@npm:2.0.0-beta.4"
+"react-bootstrap@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "react-bootstrap@npm:1.6.1"
   dependencies:
     "@babel/runtime": ^7.14.0
     "@restart/context": ^2.1.4
@@ -12127,14 +12167,14 @@ fsevents@^1.2.7:
     invariant: ^2.2.4
     prop-types: ^15.7.2
     prop-types-extra: ^1.1.0
-    react-overlays: ^5.1.1
+    react-overlays: ^5.0.1
     react-transition-group: ^4.4.1
     uncontrollable: ^7.2.1
     warning: ^4.0.3
   peerDependencies:
-    react: ">=16.14.0"
-    react-dom: ">=16.14.0"
-  checksum: bf5e17d476f4d46761df48ac936e259dc3f327eba2dcd77f2ae8d80436550a021240ed77b5595fd4c5434478f1d3a5be3b0a36db8704b3c4e3ab918f12e14502
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 1e02c3abdd290b11aab282196013b7eb9e7ea228db0fa95a0cf7b49a826364b2dbd1a9debbe628b7ac29ab891c1604c51c983ea7fa5c00b8a59e0e64ebcb3fbc
   languageName: node
   linkType: hard
 
@@ -12190,7 +12230,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.3.2, react-is@npm:^16.8.1":
+"react-is@npm:^16.13.1, react-is@npm:^16.3.2, react-is@npm:^16.7.0, react-is@npm:^16.8.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 11bcf1267a314a522615f626f3ce3727a3a24cdbf61c4d452add3550a7875326669631326cfb1ba3e92b6f72244c32ffecf93ad21c0cad8455d3e169d0e3f060
@@ -12211,7 +12251,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-overlays@npm:^5.1.1":
+"react-overlays@npm:^5.0.1":
   version: 5.1.1
   resolution: "react-overlays@npm:5.1.1"
   dependencies:
@@ -12227,6 +12267,27 @@ fsevents@^1.2.7:
     react: ">=16.3.0"
     react-dom: ">=16.3.0"
   checksum: f6821bafc8bcc919750533f97451db10ef188021dce577661fa1fcaf3c0e35cc892d12479122164112e8c5894ee4ecc859655f546e5ac6a675afc638e1abec9d
+  languageName: node
+  linkType: hard
+
+"react-redux@npm:^7.2.4":
+  version: 7.2.4
+  resolution: "react-redux@npm:7.2.4"
+  dependencies:
+    "@babel/runtime": ^7.12.1
+    "@types/react-redux": ^7.1.16
+    hoist-non-react-statics: ^3.3.2
+    loose-envify: ^1.4.0
+    prop-types: ^15.7.2
+    react-is: ^16.13.1
+  peerDependencies:
+    react: ^16.8.3 || ^17
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 24c4dd26dc55c498d0dcec2e2ef1678aa8cb3f2e1c31704363d072b045460c1f60f5b89b508d3984ae680779cba00ee65f1344a4c4c02768a6bec132e33ee815
   languageName: node
   linkType: hard
 
@@ -12446,6 +12507,22 @@ fsevents@^1.2.7:
     indent-string: ^4.0.0
     strip-indent: ^3.0.0
   checksum: 78c8aa0a1076f47e0e198bfc8a9aa7d4ae3163c6951bd5de1015e47661bba62ea36573337bbeb4b309b48cc71954edbe43ae4aa3163db1996a781b757c5c47d7
+  languageName: node
+  linkType: hard
+
+"redux-thunk@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "redux-thunk@npm:2.3.0"
+  checksum: 2d7210b88cef244384ab15bfe0c0f79a7d5a2fe059825da121121ec75378b175860695fafd5265386a0fd4b86212cc49e5972825f7bc9f803ad8753229f0258b
+  languageName: node
+  linkType: hard
+
+"redux@npm:^4.0.0, redux@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "redux@npm:4.1.1"
+  dependencies:
+    "@babel/runtime": ^7.9.2
+  checksum: 063e1d52588d62d438bb392975e57c0091c79f9abdbb8594c44c1680a73415280f6133c3d9cb3b116fe1ceb7e1aefb44775d6136b8bb6b9eb6a2c1a23e32a840
   languageName: node
   linkType: hard
 
@@ -14726,9 +14803,12 @@ resolve@1.18.1:
     bootstrap: 4.6.0
     eslint-config-react-app: ^6.0.0
     react: ^17.0.2
-    react-bootstrap: next
+    react-bootstrap: ^1.6.1
     react-dom: ^17.0.2
+    react-redux: ^7.2.4
     react-scripts: 4.0.3
+    redux: ^4.1.1
+    redux-thunk: ^2.3.0
     web-vitals: ^1.0.1
   languageName: unknown
   linkType: soft

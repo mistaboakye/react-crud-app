@@ -3,6 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { createStore, applyMiddleware } from "redux";
+import userReducer from "./Store/usersReducer";
+import { thunk } from "redux-thunk";
+const store = createStore(userReducer, applyMiddleware(thunk));
 
 //promises in javascript
 // const promiseForChocomilo = new Promise((resolve, reject) => {
