@@ -16,10 +16,10 @@ const userReducer = (state = firstState, action) => {
   switch (action.type) {
     case "ADD_USER":
       const newUser = {
-        name: this.state.name,
-        email: this.state.email,
-        country: this.state.country,
-        password: this.state.password,
+        name: action.data.name,
+        email: action.data.email,
+        country: action.data.country,
+        password: action.data.password,
       };
       return { ...state, users: [...state.users, newUser] };
 
