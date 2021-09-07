@@ -1,23 +1,16 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addNewUser, deleteUser } from "./Store/userActions";
 import AddUser from "./Components/AddUser";
 import Users from "./Components/Users";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: [],
-    };
-  }
-
-  //this adds new users to the users created already by
+class App extends Component {
+  //this method adds new users to the users created already by
   // attaching random id numbers with the math below
   addNewUser = (user) => {
     user.id = 100 + Math.random() * 1000;
-    this.setState({
-      users: [...this.state.users, user],
-    });
+    this.props.addNewUser(user);
   };
 
   //this method removes users from the list by their ID
@@ -25,10 +18,11 @@ export default class App extends Component {
   //the id that does not match the one that needs not be
   // removed
   deleteUser = (id) => {
-    let newUser = this.state.users.filter((user) => user.id !== id);
-    this.setState({ users: newUser });
+    this.props.deleteUser(id);
   };
 
+  //this method updates existing users per thier id and
+  //adds the new updates to the user
   updateUser = (id, newContactUpdate) => {
     this.setState({
       users: this.state.users.map((user) =>
@@ -36,6 +30,8 @@ export default class App extends Component {
       ),
     });
   };
+  // });
+
   render() {
     return (
       <div className="container-fluid">
@@ -47,8 +43,8 @@ export default class App extends Component {
           <h1> Users</h1>
           <div className="col-md-10">
             <Users
-              usersdata={this.state.users}
-              deleteuser={this.deleteUser}
+              usersdata={this.props.users}
+              deleteuser={this.props.deleteUser}
               updateUser={this.updateUser}
             />
           </div>
@@ -57,3 +53,19 @@ export default class App extends Component {
     );
   }
 }
+
+//state is passed an a argument which will return
+//an object which will map our state to the props
+// the argument (state) is the redux state in our reducer
+const mapStateToProps = (state) => ({
+  users: state.users,
+});
+
+const mapDispatchToProps = {
+  addNewUser: addNewUser,
+  deleteUser: deleteUser,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+//mapStateToProps - helps you reading stae from the reduc store
+//mapDispatchToProps - helps to send data to your redux store

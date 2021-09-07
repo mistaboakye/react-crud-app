@@ -37,16 +37,6 @@ export default class Users extends Component {
             );
           })}
         </div>
-        {/* <div>
-          {this.state.users.map((user) => (
-            <div>
-              <p>{user.username}</p>
-
-              <p>{user.website}</p>
-              <br />
-            </div>
-          ))}
-        </div> */}
       </div>
     );
   }

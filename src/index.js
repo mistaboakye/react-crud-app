@@ -2,12 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+//this compose makes it eaiser to set up what we want
 import reportWebVitals from "./reportWebVitals";
-import { createStore, applyMiddleware } from "redux";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
 import usersReducer from "./Store/usersReducer";
-import thunk from "redux-thunk";
-const store = createStore(usersReducer, applyMiddleware(thunk));
+
+// //this helps ust to set up firebase to used in our action
+// //1. use redux firebase as a second parameter inside our create store
+// // call it it as a function with the firebase packege we want to use
+
+const store = createStore(usersReducer);
 
 //promises in javascript
 // const promiseForChocomilo = new Promise((resolve, reject) => {

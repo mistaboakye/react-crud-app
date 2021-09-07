@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { updateUser } from "../Store/userActions";
 
-export default class AddUser extends Component {
+class EditUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -86,3 +88,12 @@ export default class AddUser extends Component {
     );
   }
 }
+const mapStatetoProps = (state) => ({
+  user: state.users,
+});
+
+const mapDispatchToProps = {
+  updateUser: updateUser,
+};
+
+export default connect(mapStatetoProps, mapDispatchToProps)(EditUser);
